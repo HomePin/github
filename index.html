@@ -291,7 +291,7 @@
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">do</span> &#123;</div><div class="line">	<span class="keyword">try</span> canThrowAnError() <span class="comment">// 没有错误消息抛出</span></div><div class="line">&#125; <span class="keyword">catch</span> &#123;</div><div class="line">	<span class="comment">// 有一个错误消息抛出</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="集合操作（Set）"><a href="#集合操作（Set）" class="headerlink" title="集合操作（Set）"></a>集合操作（Set）</h2><p><img src="./GL_VB2KRCY7UVD0DM359.jpg" alt="Alt text"></p>
+<h2 id="集合操作（Set）"><a href="#集合操作（Set）" class="headerlink" title="集合操作（Set）"></a>集合操作（Set）</h2><p><img src="http://oac4tri3z.bkt.clouddn.com/%E9%9B%86%E5%90%88%E6%93%8D%E4%BD%9C.jpg" alt="Alt text"></p>
 <p>##控制流</p>
 <ul>
 <li><p><strong>贯穿（Fallthrough）</strong><br>Swift 中的 switch 不会从上一个 case 分支落入到下一个 case 分支中。相反,只要第一个匹配到的 case 分支 完成了它需要执行的语句,整个 switch 代码块完成了它的执行。相比之下,C 语言要求你显式地插入 break 语句 到每个 switch 分支的末尾来阻止自动落入到下一个 case 分支中。Swift 的这种避免默认落入到下一个分支中的 特性意味着它的 switch 功能要比 C 语言的更加清晰和可预测,可以避免无意识地执行多个 case 分支从而引发 的错误。<br>如果你确实需要 C 风格的贯穿的特性,你可以在每个需要该特性的 case 分支中使用 fallthrough 关键字。下面 的例子使用 fallthrough 来创建一个数字的描述语句。</p>
