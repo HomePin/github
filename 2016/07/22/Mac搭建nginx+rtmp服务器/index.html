@@ -108,7 +108,7 @@
 <meta property="og:image" content="http://oac4tri3z.bkt.clouddn.com/nginx-info.png">
 <meta property="og:image" content="http://oac4tri3z.bkt.clouddn.com/nginx-file.png">
 <meta property="og:image" content="http://oac4tri3z.bkt.clouddn.com/nginx-reload.png">
-<meta property="og:updated_time" content="2016-07-22T06:45:00.000Z">
+<meta property="og:updated_time" content="2016-07-22T06:46:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac搭建nginx+rtmp服务器">
 <meta name="twitter:description" content="本文参考自推酷:Mac搭建nginx+rtmp服务器
@@ -319,11 +319,16 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew info nginx-full</div></pre></td></tr></table></figure>
 <p>  其位置如下图所示：<br>  <img src="http://oac4tri3z.bkt.clouddn.com/nginx-info.png" alt="Alt text"></p>
 </li>
-<li><p><strong>找到该文件并打开</strong><br>  <img src="http://oac4tri3z.bkt.clouddn.com/nginx-file.png" alt="Alt text"><br>  直接滚到最后一行, 在最后一个}(即最后的空白处, 没有任何{})后面添加</p>
+<li><p><strong>找到该文件并打开</strong><br>  <img src="http://oac4tri3z.bkt.clouddn.com/nginx-file.png" alt="Alt text"></p>
+<blockquote>
+<p>直接滚到最后一行, 在最后一个}(即最后的空白处, 没有任何{})后面添加</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">rtmp &#123;</div><div class="line">    server &#123;</div><div class="line">        listen 1900;</div><div class="line">        application rtmplive &#123;</div><div class="line">            live on;</div><div class="line">            record off;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p><strong>重启nginx(其中的1.10.1要换成你自己安装的nginx版本号, 查看版本号用nginx -v命令即可)</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/local/Cellar/nginx-full/1.10.1/bin/nginx -s reload</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>然后重启nginx(其中的1.10.1要换成你自己安装的nginx版本号, 查看版本号用nginx -v命令即可)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/local/Cellar/nginx-full/1.10.1/bin/nginx -s reload</div></pre></td></tr></table></figure></p>
 <p>如下图所示：<br><img src="http://oac4tri3z.bkt.clouddn.com/nginx-reload.png" alt="Alt text"></p>
 <ul>
 <li><strong>将视频推流到服务器后，打开VLC，然后File-&gt;open network-&gt;输入</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rtmp://localhost:1900/rtmplive/room</div></pre></td></tr></table></figure>
