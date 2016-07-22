@@ -283,32 +283,30 @@
             <blockquote>
 <p>本文参考自简书:<a href="http://www.jianshu.com/p/1f06b27b3ac0" target="_blank" rel="external">iOS中集成ijkplayer视频直播框架</a></p>
 </blockquote>
-<h2 id="下载ijkplayer"><a href="#下载ijkplayer" class="headerlink" title="下载ijkplayer"></a>下载ijkplayer</h2><p>下载地址：<a href="https://github.com/Bilibili/ijkplayer" target="_blank" rel="external">https://github.com/Bilibili/ijkplayer</a></p>
-<h2 id="编译ijkplayer"><a href="#编译ijkplayer" class="headerlink" title="编译ijkplayer"></a>编译ijkplayer</h2><blockquote>
-<p>其实编译的是ffmpeg</p>
-</blockquote>
-<ul>
+<h2 id="下载ijkplayer"><a href="#下载ijkplayer" class="headerlink" title="下载ijkplayer"></a>下载ijkplayer</h2><pre><code>下载地址：https://github.com/Bilibili/ijkplayer
+</code></pre><h2 id="编译ijkplayer"><a href="#编译ijkplayer" class="headerlink" title="编译ijkplayer"></a>编译ijkplayer</h2><pre><code>&gt;其实编译的是ffmpeg
+</code></pre><ul>
 <li><p><strong>打开终端，进入ijkplayer的根目录</strong></p>
 </li>
-<li><p><strong>执行命令行./init-ios.sh，该步骤实际是去下载ffmpeg，执行成功后显示如下：</strong></p>
+<li><p><strong>执行命令行./init-ios.sh，该步骤实际是去下载ffmpeg，执行成功后显示如下：</strong><br><img src="http://oac4tri3z.bkt.clouddn.com/ijkplayer_init.png" alt="Alt text"></p>
 </li>
-</ul>
-<p><img src="http://oac4tri3z.bkt.clouddn.com/ijkplayer_init.png" alt="Alt text"></p>
-<ul>
-<li><strong>下载完成后进入ios目录</strong></li>
-<li><strong>在终端依次执行./compile-ffmpeg.sh clean和./compile-ffmpeg.sh all命令, 编译 ffmpeg</strong></li>
+<li><p><strong>下载完成后进入ios目录</strong></p>
+</li>
+<li><p><strong>在终端依次执行./compile-ffmpeg.sh clean和./compile-ffmpeg.sh all命令, 编译ffmpeg</strong></p>
+</li>
 </ul>
 <h2 id="打包IJKMediaFramework-framework框架"><a href="#打包IJKMediaFramework-framework框架" class="headerlink" title="打包IJKMediaFramework.framework框架"></a>打包IJKMediaFramework.framework框架</h2><ul>
 <li><p><strong>打开IJKMediaPlayer.xcodeproj工程</strong><br><img src="http://oac4tri3z.bkt.clouddn.com/ijkplayer_open.png" alt="Alt text"></p>
 </li>
 <li><p><strong>打开后设置工程的scheme</strong><br><img src="http://oac4tri3z.bkt.clouddn.com/ijkplayer_release.png" alt="Alt text"></p>
 </li>
-<li><p><strong>设置好scheme后，分别选择真机和模拟器进行编译，编译完成后进入finder，如下图</strong><br><img src="http://oac4tri3z.bkt.clouddn.com/ijkplayerFramework_show1.png" alt="Alt text"></p>
+<li><p><strong>设置好scheme后，分别选择真机和模拟器进行编译，编译完成后进入finder，如下图:</strong><br><img src="http://oac4tri3z.bkt.clouddn.com/ijkplayerFramework_show1.png" alt="Alt text"></p>
 </li>
-<li><p><strong>合并真机和模拟器的framework，打开终端，进行合并</strong><br><img src="http://oac4tri3z.bkt.clouddn.com/ijkplayerFramework_lipo.png" alt="Alt text"></p>
+<li><p><strong>合并真机和模拟器的framework，打开终端，进行合并</strong></p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lipo -create <span class="string">"真机版本路径"</span> <span class="string">"模拟器版本路径"</span> -output <span class="string">"合并后的文件路径"</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lipo -create <span class="string">"真机版本路径"</span> <span class="string">"模拟器版本路径"</span> -output <span class="string">"合并后的文件路径"</span></div></pre></td></tr></table></figure>
+<p><img src="http://oac4tri3z.bkt.clouddn.com/ijkplayerFramework_lipo.png" alt="Alt text"></p>
 <p><img src="http://oac4tri3z.bkt.clouddn.com/ijkplayer_lipo_result.png" alt="Alt text"><br>合并后如图：<br><img src="http://oac4tri3z.bkt.clouddn.com/ijkplayerFramework_lipo_result.png" alt="Alt text"></p>
 <ul>
 <li><strong>用合并后的IJKMediaFramework把原来的IJKMediaFramework替换掉</strong><br><img src="http://oac4tri3z.bkt.clouddn.com/ijkplayerFramework_replase.png" alt="Alt text"></li>
