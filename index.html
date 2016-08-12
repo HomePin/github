@@ -236,6 +236,114 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/12/ios集成Twitter登录SDK/" itemprop="url">
+                  ios集成Twitter登录SDK
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-12T17:16:51+08:00" content="2016-08-12">
+              2016-08-12
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="ios集成Twitter登录SDK"><a href="#ios集成Twitter登录SDK" class="headerlink" title="ios集成Twitter登录SDK"></a>ios集成Twitter登录SDK</h2><h3 id="Twitter的登录SDK配置比较特殊，可以选择两种方案配置："><a href="#Twitter的登录SDK配置比较特殊，可以选择两种方案配置：" class="headerlink" title="Twitter的登录SDK配置比较特殊，可以选择两种方案配置："></a>Twitter的登录SDK配置比较特殊，可以选择两种方案配置：</h3><ul>
+<li><strong>手动配置，具体操作见<a href="https://fabric.io/kits/ios/twitterkit" target="_blank" rel="external">https://fabric.io/kits/ios/twitterkit</a></strong></li>
+<li><strong>通过安装Fabric来选择工程目录进行自动化配置</strong></li>
+</ul>
+<h2 id="遇到的坑"><a href="#遇到的坑" class="headerlink" title="遇到的坑"></a>遇到的坑</h2><ul>
+<li><p><strong>申请创建app时，填完要求的信息后提交出现error，提示内容如下</strong></p>
+<blockquote>
+<p>You must add your mobile phone to your Twitter profile before creating an application. Please read <a href="https://support.twitter.com/articles/110250-adding-your-mobile-number-to-your-account-via-web" target="_blank" rel="external">https://support.twitter.com/articles/110250-adding-your-mobile-number-to-your-account-via-web</a> for more information.</p>
+</blockquote>
+<p>  出现原因是我所属的账号没有进行手机验证（不是我不想验证，是在注册账号的时候申请手机验证一直出错…），原本是想按网上一部分的做法去发送邮件申请解锁权限（因为被墙的问题），后来在个人信息页里发现其实是可以发送手机验证码（- -！），验证完手机号码后就可以提交app的创建</p>
+</li>
+</ul>
+<ul>
+<li><strong>填写的信息中有一项是Callback URL，因为页面没有说必填，我选择直接忽略，结果在调用SDK登录的时候一直显示Request failed: unauthorized (401)的错误码，后来发现后按网上的做法先填写一个公用的URL（<a href="http://codegerms.com/callback），后面视情况再做修改" target="_blank" rel="external">http://codegerms.com/callback），后面视情况再做修改</a></strong></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/22/ios集成ijkplayer视频直播框架/" itemprop="url">
                   ios集成ijkplayer视频直播框架
                 </a>
@@ -714,7 +822,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -724,7 +832,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
